@@ -9,7 +9,6 @@
 
 <script>
 export default {
-
 }
 </script>
 
@@ -21,6 +20,21 @@ export default {
 }
 a {
 text-decoration: none;
-color:#4a536b;
+color:#324050;
 }
+ @media only screen and (max-width: 1600px) {
+    .navbar {
+      font-size: 1em;
+    }
+  }
+   @media only screen and (max-width: 1200px) {
+    .navbar {
+      font-size: .8em;
+    }
+  }
+   @media only screen and (max-width: 900px) {
+    .navbar {
+      font-size: .5em;
+    }
+  }
 </style>
