@@ -36,15 +36,6 @@ export default {
     background-color:#C0CACB;
     font-size: 2em;
   }
-  .header {
-    position: relative;
-  }
-  .view {
-    position: relative;
-  }
-  .footer {
-    position: relative;
-  }
   @media only screen and (max-width: 1900px) {
     #title {
       font-size: 3em;
