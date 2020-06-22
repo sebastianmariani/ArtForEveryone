@@ -1,3 +1,13 @@
 <template>
-    <h1>browse</h1>
+    <div>
+        <div class="painting">
+
+        </div>
+    </div>
 </template>
+
+<script>
+export default {
+    
+}
+</script>
