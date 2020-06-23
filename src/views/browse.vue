@@ -4,10 +4,11 @@
             <h1>{{ painting.name }}</h1>
             <img :src="painting.img">
             <p> {{ painting.price }} £</p>
-            <button>Buy</button>
+            <button @click="addToCart(painting)" >Buy</button>
             <hr>
         </div>
         {{ inCart }}
+        {{ inCart.length }}
     </div>
 </template>
 
@@ -16,6 +17,12 @@ export default {
     computed: {
         forSale() { return this.$store.getters.forSale },
         inCart() { return this.$store.getters.inCart },
+    },
+    methods: {
+        addToCart(painting) {
+            this.inCart.push(painting.id);
+
+        }
     }
 }
 </script>
@@ -25,6 +32,7 @@ export default {
         text-align: center;
         font-size: 1.5em;
         padding: 5% 0;
+        color: #324050;;
     }
     img{
         width: 50%;
@@ -36,6 +44,8 @@ export default {
     }
     button {
         border-radius: 5px;
+        background-color: #324050;
+        color: white;
     }
     @media only screen and (max-width: 1900px) {
        .painting {
