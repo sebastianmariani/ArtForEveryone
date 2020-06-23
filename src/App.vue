@@ -1,15 +1,11 @@
 <template>
   <div class="app">
     <h1 id="title">ArtForEveryone</h1>
-    <div class="header">
       <app-navbar></app-navbar>
-    </div>
-    <div class="view">
-      <router-view></router-view>
-    </div>
-    <div class="footer">
+      <transition name="view">
+        <router-view></router-view>
+      </transition>
       <app-contacts></app-contacts>
-    </div>
   </div>
 </template>
 
@@ -35,6 +31,29 @@ export default {
   body {
     background-color:#C0CACB;
     font-size: 2em;
+    font-family: 'Alegreya Sans SC', sans-serif;
+  }
+  .view-enter-active, .view-leave-active {
+    transition: opacity  0.5s ease-in-out, transform  0.5s ease; 
+  }
+  .view-enter-active {
+    transition-delay: 0.5s ;
+  }
+  .view-enter {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  .view-enter-to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  .view-leave-to{
+    opacity: 0;
+    transform: translateY(0px);
+  }
+  .view-leave{
+    opacity: 1;
+    transform: translateY(100px);
   }
   @media only screen and (max-width: 1900px) {
     #title {

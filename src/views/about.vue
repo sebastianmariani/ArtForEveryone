@@ -18,11 +18,12 @@ export default {
     h1 {
         color:#FEC84D;
         font-size: 4em;
-        text-shadow:1px 1px 2px #324050;
+        font-weight: 400;
     }
     p {
         color:#324050;
         font-size: 3em;
+        font-weight: 300;
     }
     hr {
         border: 2px solid #FEC84D;
@@ -40,7 +41,7 @@ export default {
             font-size: 2em;
         }
         p {
-            font-size: 1.4em;
+            font-size: 1em;
         }
     }
     @media only screen and (max-width: 750px) {

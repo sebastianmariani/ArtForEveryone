@@ -19,7 +19,10 @@ export default {
 .navbar {
     display: flex;
     justify-content: space-evenly;
-    font-size: 1.5em;
+    font-size: 2em;
+}
+.router-link-exact-active {
+  color: #FEC84D;
 }
 a {
 text-decoration: none;
