@@ -3,7 +3,7 @@
         <router-link to="/">Home</router-link>
         <router-link to="/about">About</router-link>
         <router-link to="/browse">Browse</router-link>
-        <router-link to="/basket">Basket <span v-if="inCart.length > 0">({{ inCart.length }})</span></router-link>
+        <router-link to="/basket">Basket <span  v-if="inCart.length > 0">({{ inCart.length }})</span></router-link>
     </div>
 </template>
 

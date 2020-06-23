@@ -7,8 +7,6 @@
             <button @click="addToCart(painting)" >Buy</button>
             <hr>
         </div>
-        {{ inCart }}
-        {{ inCart.length }}
     </div>
 </template>
 
@@ -32,7 +30,7 @@ export default {
         text-align: center;
         font-size: 1.5em;
         padding: 5% 0;
-        color: #324050;;
+        color: #324050;
     }
     img{
         width: 50%;
@@ -46,6 +44,7 @@ export default {
         border-radius: 5px;
         background-color: #324050;
         color: white;
+        padding:1% 4%;
     }
     @media only screen and (max-width: 1900px) {
        .painting {
