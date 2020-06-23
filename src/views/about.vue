@@ -13,51 +13,47 @@ export default {
 
 <style scoped> 
     .about {
-        margin: 0 5%;
+        margin: 5% 5%;
     }
     h1 {
-        color:#FEC84D;
-        font-size: 4em;
-        font-weight: 400;
+        color:#eb5e55;
+        font-size: 2em;
     }
     p {
-        color:#324050;
-        font-size: 3em;
+        color:#243e36;
+        font-size: 1.2em;
         font-weight: 300;
     }
     hr {
-        border: 2px solid #FEC84D;
+        border: 1px solid #eb5e55;
     }
     @media only screen and (max-width: 1600px) {
         h1 {
-            font-size: 3em;
-        }
-        p {
-            font-size: 2em;
-        }
-    }
-    @media only screen and (max-width: 1150px) {
-        h1 {
-            font-size: 2em;
+            font-size: 1.7em;
         }
         p {
             font-size: 1em;
         }
     }
-    @media only screen and (max-width: 750px) {
-        h1 {
-            font-size: 1.5em;
-        }
-        p {
-            font-size: 1em;
-        }
-    }
-    @media only screen and (max-width: 425px) {
+    @media only screen and (max-width: 1000px) {
         h1 {
             font-size: 1.2em;
         }
         p {
+            font-size: .6em;
+        }
+    }
+    @media only screen and (max-width:600px ) {
+        h1 {
             font-size: 1em;
+        }
+        p {
+            font-size: .4em;
+        }
+    }
+    @media only screen and (max-width:400px ) {
+        h1 {
+            font-size: .6em;
         }
     }
 </style>

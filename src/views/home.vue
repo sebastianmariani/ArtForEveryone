@@ -18,9 +18,8 @@ export default {
 <style scoped>
 .home {
     padding:0 5%;
-    font-size: 2.5em;
-    color:#FEC84D;
-    text-shadow:2px 1px 2px #324050;
+    font-size: 2em;
+    color:#eb5e55;
 }
 #top {
     text-align: center;
@@ -32,83 +31,93 @@ export default {
 }
 .img-with-text h1 {
     position: absolute;
-    top:8em;
-    left: 55%;
+    top:10em;
+    left: 65%;
 }
 .img-with-text img {
     width: 60%;
 }
 hr {
-        border: 2px solid #FEC84D;
+        border: 1px solid #eb5e55;
         margin-bottom: 4%;
     }
-@media only screen and (max-width: 2299px) {
+@media only screen and (max-width: 2309px) {
     .img-with-text h1 {
-        top:6em;
-        left: 55%;
+        top:9em;
     }
 }
 @media only screen and (max-width: 2045px) {
     .img-with-text h1 {
-        top:5em;
-        left: 50%;
+        top:8em;
     }
 }
-@media only screen and (max-width: 1960px) {
-    .home {
-    font-size: 2em;
-    }
-}
-@media only screen and (max-width: 1478px) {
+@media only screen and (max-width: 1982px) {
     .img-with-text h1 {
-        top:5em;
-        left: 50%;
+        top:9em;
     }
-    .home {
-    font-size: 1.5em;
-    }
-}
-@media only screen and (max-width: 1111px) {
-    .home {
-    font-size: 1em;
+     .home {
+        font-size: 1.5em;
     }
 }
-@media only screen and (max-width: 746px) {
-    .home {
-    font-size: .8em;
-    }
+
+@media only screen and (max-width: 1800px) {
     .img-with-text h1 {
-        top:5em;
-        left: 50%;
+        top:8em;
     }
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1480px) {
     .home {
-    font-size: .7em;
-    }
-}
-@media only screen and (max-width: 527px) {
-    .home {
-    font-size: .5em;
+    font-size: 1.3em;
     }
     .img-with-text h1 {
         top:6em;
-        left: 50%;
     }
 }
-@media only screen and (max-width: 410px) {
+@media only screen and (max-width: 1250px) {
+    .home {
+    font-size: 1em;
+    }
+    .img-with-text h1 {
+        top:8em;
+    }
+}
+@media only screen and (max-width: 1050px) {
+    .home {
+    font-size: .7em;
+    }
+    .img-with-text h1 {
+        top:13em;
+    }
+}
+@media only screen and (max-width: 956px) {
+    .img-with-text h1 {
+        top:10em;
+    }
+}
+@media only screen and (max-width: 790px) {
     .img-with-text h1 {
         top:5em;
-        left: 50%;
     }
 }
-@media only screen and (max-width: 379px) {
+@media only screen and (max-width: 625px) {
     .home {
     font-size: .4em;
     }
     .img-with-text h1 {
-        top:4em;
-        left: 50%;
+        top:8em;
+    }
+}
+@media only screen and (max-width: 490px) {
+    .home {
+    font-size: .4em;
+    }
+    .img-with-text h1 {
+        top:7em;
+    }
+}
+@media only screen and (max-width: 391px) {
+    .img-with-text h1 {
+        top:3em;
     }
 }
 </style>

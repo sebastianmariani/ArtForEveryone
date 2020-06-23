@@ -28,38 +28,32 @@ export default {
 <style scoped>
     .painting {
         text-align: center;
-        font-size: 1.5em;
-        padding: 5% 0;
-        color: #324050;
+        font-size: .5em;
+        color: #243e36;
     }
     img{
-        width: 50%;
+        height: 50em;
     }
     hr {
-        border: 1px solid #324050;
+        border: 1px solid #eb5e55;
         margin-top: 5%;
         width: 80%;
     }
     button {
         border-radius: 5px;
-        background-color: #324050;
-        color: white;
+        background-color: #243e36;
+        color: #f1f7ed;
         padding:1% 4%;
     }
-    @media only screen and (max-width: 1900px) {
-       .painting {
-        font-size: 1em;
-        } 
-    }
     @media only screen and (max-width: 1140px) {
-       .painting {
-        font-size: .8em;
-        } 
+       img{
+        height: 30em;
+        }
     }
     @media only screen and (max-width: 850px) {
-       .painting {
-        font-size: .5em;
-        } 
+        img{
+        height: 20em;
+        }
     }
     @media only screen and (max-width: 450px) {
        .painting {

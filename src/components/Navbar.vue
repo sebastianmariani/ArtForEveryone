@@ -19,21 +19,16 @@ export default {
 .navbar {
     display: flex;
     justify-content: space-evenly;
-    font-size: 2em;
+    font-size: 1em;
 }
 .router-link-exact-active {
-  color: #FEC84D;
+  color: #eb5e55;
 }
 a {
 text-decoration: none;
-color:#324050;
+color:#243e36;
 }
- @media only screen and (max-width: 1600px) {
-    .navbar {
-      font-size: 1em;
-    }
-  }
-   @media only screen and (max-width: 1200px) {
+  @media only screen and (max-width: 1200px) {
     .navbar {
       font-size: .8em;
     }

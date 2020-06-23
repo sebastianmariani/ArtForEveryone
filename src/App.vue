@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <h1 id="title">ArtForEveryone</h1>
+    <h1 id="title">ARTOPIA</h1>
       <app-navbar></app-navbar>
       <transition name="view">
         <router-view></router-view>
@@ -25,13 +25,14 @@ export default {
   #title {
     text-align: center;
     margin-bottom: 5%;
-    color:#324050;
-    font-size: 4em;
+    color:#243e36;
+    font-size: 2.5em;
   }
   body {
-    background-color:#C0CACB;
+    background-color:#f1f7ed;
     font-size: 2em;
     font-family: 'Alegreya Sans SC', sans-serif;
+    font-weight: 400;
   }
   .view-enter-active, .view-leave-active {
     transition: opacity  0.5s ease-in-out, transform  0.5s ease; 
@@ -55,11 +56,6 @@ export default {
     opacity: 1;
     transform: translateY(100px);
   }
-  @media only screen and (max-width: 1900px) {
-    #title {
-      font-size: 3em;
-    }
-  }
   @media only screen and (max-width: 1350px) {
     #title {
       font-size: 2em;
@@ -67,12 +63,17 @@ export default {
   }
   @media only screen and (max-width: 1000px) {
     #title {
-      font-size: 1.8em;
+      font-size: 1.5em;
     }
   }
   @media only screen and (max-width: 600px) {
     #title {
-      font-size: 1em;
+      font-size: 1.2em;
+    }
+  }
+  @media only screen and (max-width: 400px) {
+    #title {
+      font-size: .8em;
     }
   }
 </style>

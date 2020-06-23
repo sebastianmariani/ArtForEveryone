@@ -52,26 +52,26 @@ export default {
 <style scoped>
 #emptyCart {
     text-align: center;
-    color: #324050;
+    color: #243e36;
 }
 button {
-    background-color: #324050;
+    background-color: #eb5e55;
     border-radius: 5px;
     padding:1% 4%;
 }
 a {
     text-decoration: none;
-    color: white;
+    color: #f1f7ed;
 }
 .basket {
     margin: 5% 0;
 }
 .table {
-    background-color: #324050;
-    color: #FEC84D;
+    background-color: #243e36;
+    color: #eb5e55;
     width: 100%;
     padding: 5%;
-    font-size: 2em;
+    font-size: 1.5em;
 }
 .basketItem {
     display:flex;
@@ -81,33 +81,42 @@ a {
     width: 100%;
 }
 img {
-    width: 8em;
+    width: 4em;
 }
 hr {
-    border: 1px solid #FEC84D;
+    border: 1px solid #eb5e55;
     margin-bottom: 4%;
 }
 @media only screen and (max-width: 2100px) {
     img {
-    width: 5em;
+    width: 3em;
     }
-}
-@media only screen and (max-width: 1560px) {
     .table {
-        font-size: 1.5em;
+        font-size: 1.2em;
     }
 }
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1800px) {
     .table {
         font-size: 1em;
     }
 }
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 1360px) {
+    #emptyCart {   
+        font-size: .5em;
+    }
+    button {
+        padding:1% 3%;
+    }
+    .table {
+        font-size: .8em;
+    }
+}
+@media only screen and (max-width: 1050px) {
     .table {
         font-size: .5em;
     }
     img {
-    width: 3em;
+    width: 2.5em;
     }
 }
 @media only screen and (max-width: 550px) {
@@ -116,6 +125,13 @@ hr {
     }
     img {
     width: 3em;
+    }
+    #emptyCart {   
+        font-size: .3em;
+    }
+    button {
+        padding:1% 1%;
+        font-size: .3em;
     }
 }
 </style>

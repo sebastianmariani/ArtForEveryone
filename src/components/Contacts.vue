@@ -29,9 +29,9 @@ export default {
 
 <style scoped>
     .contacts {
-        background-color: #324050;
+        background-color: #243e36;
         padding: 4%;
-        color: #FEC84D;
+        color: #eb5e55;
         font-size: .5em;
         display: flex;
         justify-content: space-evenly;
