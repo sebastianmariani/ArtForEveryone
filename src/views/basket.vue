@@ -1,3 +1,4 @@
 <template>
-    <h1>basket</h1>
+    
+    <h1>Basket</h1>
 </template>

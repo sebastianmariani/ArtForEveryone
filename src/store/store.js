@@ -20,5 +20,9 @@ export const store = new Vuex.Store({
             {id:6 , img: img6, name: 'painting6', price:160},
         ],
         cart:[]
+    },
+    getters: {
+        forSale: state => state.products,
+        inCart: state => state.cart,
     }
 })
