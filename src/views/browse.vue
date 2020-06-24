@@ -35,13 +35,13 @@ export default {
         height: 50em;
     }
     hr {
-        border: 1px solid #eb5e55;
+        border: 1px solid #243e36;
         margin-top: 5%;
         width: 80%;
     }
     button {
         border-radius: 5px;
-        background-color: #243e36;
+        background-color: #eb5e55;
         color: #f1f7ed;
         padding:1% 4%;
     }
