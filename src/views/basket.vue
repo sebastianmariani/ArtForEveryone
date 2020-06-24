@@ -1,8 +1,8 @@
 <template>
     <div class="basket">
         <div id="emptyCart" v-if="cart.length == 0">
-            <h1>Your Cart Is Empty</h1>
-            <p>Please visit out Stock</p>
+            <h1>Your cart is empty</h1>
+            <p>Please visit out stock</p>
             <button><router-link to="/browse">Visit Shop</router-link></button>
         </div>
         <table v-if="cart.length > 0" class="table">

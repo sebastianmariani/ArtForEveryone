@@ -1,9 +1,9 @@
 <template>
     <div class="home">
-        <h1 id="top">We are Changing the World of Art by...</h1>
+        <h1 id="top">We are changing the world of art by...</h1>
         <div class="img-with-text">
             <img src="../assets/museum.jpg" alt="">
-            <h1 id="main">Making Art Accessible to Everyone</h1> 
+            <h1 id="main">Making art accessible to everyone</h1> 
         </div>
         <hr>
     </div>
