@@ -4,22 +4,23 @@
             <h1>{{ painting.name }}</h1>
             <img :src="painting.img">
             <p> {{ painting.price }} £</p>
-            <button @click="addToCart(painting)" >Buy</button>
+            <router-link to="/painting"><button @click="viewPainting(painting)">View</button></router-link>
             <hr>
         </div>
     </div>
 </template>
 
 <script>
-export default {
-    computed: {
-        forSale() { return this.$store.getters.forSale },
-        inCart() { return this.$store.getters.inCart },
-    },
-    methods: {
-        addToCart(painting) {
-            this.inCart.push(painting.id);
+import { mapGetters } from 'vuex'
 
+export default {
+    computed: mapGetters(['forSale', 'showPainting']),
+    methods: {
+        viewPainting(painting) {
+            if (this.showPainting.length > 0){
+                this.showPainting.shift()
+            }
+            this.showPainting.push(painting.id);
         }
     }
 }
@@ -44,6 +45,7 @@ export default {
         background-color: #eb5e55;
         color: #f1f7ed;
         padding:1% 4%;
+        border-style: none;
     }
     @media only screen and (max-width: 1140px) {
        img{
