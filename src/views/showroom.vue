@@ -1,23 +1,25 @@
 <template>
     <div>
-        <div v-for="item in painting" :key="item" class="showroom">
+        <div v-for="item in painting" :key="item.id" class="showroom">
             <div class="setting">
                 <h4>You are viewing :</h4>
                 <p>{{ item.name }}</p>
                 <p>by :{{ item.artist }}</p>
                 <p>WALL COLOR <input type="color" id="base" name="base" v-model="color"></p>
                 <router-link to="/painting"><button>go back</button></router-link>
-                <button>Living room</button>
+                <button @click="livingroom = !livingroom">Living room</button>
             </div>
             <div  class="display">
                 <div :style="{backgroundColor: color}" class="wall">
                     <img :src="item.img">
                 </div>
                 <div class="forniture">
-                    <div :style="{display: isActive}">
-                        <img id="sofa" src="../assets/sofa.png">
-                        <img id="lamp" src="../assets/lamp.png">
-                    </div>
+                    <transition-group name="slideIn">
+                        <div class="view1" v-if="livingroom">
+                            <img id="sofa" src="../assets/sofa.png">
+                            <img id="lamp" src="../assets/lamp.png">
+                        </div>
+                    </transition-group>
                 </div>
             </div>
         </div>
@@ -31,7 +33,7 @@ export default {
     data(){
         return{
             color: '#243E36',
-            
+            livingroom: false
         }
     },
     computed: {

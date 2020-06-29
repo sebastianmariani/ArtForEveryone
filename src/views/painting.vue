@@ -1,6 +1,6 @@
 <template>
     <div class="showPainting">
-        <div v-for="item in painting" :key="item" class="paintDetails">
+        <div v-for="item in painting" :key="item.id" class="paintDetails">
             <div id="info">
                 <h3>{{ item.name }}</h3>
                 <p><strong>artist:</strong> {{ item.artist }}</p>

@@ -8,7 +8,7 @@
         <table v-if="cart.length > 0" class="table">
             <tbody>
                 <transition-group name="fadeOut">
-                    <tr v-for="(item, index) in cart" :key="item" class="basketItem">
+                    <tr v-for="(item, index) in cart" :key="index" class="basketItem">
                         <td>{{ item.name }}</td>
                         <td><img :src="item.img"></td>
                         <td>{{ item.price }} £</td>
