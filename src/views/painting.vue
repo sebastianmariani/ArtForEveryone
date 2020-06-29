@@ -17,7 +17,7 @@
 
 <script>
 
-import { mapGetters } from 'vuex'
+import { mapGetters, mapMutations } from 'vuex'
 
 export default {
     computed: {
@@ -36,9 +36,9 @@ export default {
         },
     },
     methods: {
-        addToCart(item) {
-            this.inCart.push(item.id);
-        },
+        ...mapMutations([
+            'addToCart'
+        ]),
     }
 }
 </script>

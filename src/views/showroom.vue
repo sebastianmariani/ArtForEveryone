@@ -6,14 +6,18 @@
                 <p>{{ item.name }}</p>
                 <p>by :{{ item.artist }}</p>
                 <p>WALL COLOR <input type="color" id="base" name="base" v-model="color"></p>
-                <i  class="fas fa-ambulance"></i>
                 <router-link to="/painting"><button>go back</button></router-link>
+                <button>Living room</button>
             </div>
             <div  class="display">
                 <div :style="{backgroundColor: color}" class="wall">
                     <img :src="item.img">
                 </div>
                 <div class="forniture">
+                    <div :style="{display: isActive}">
+                        <img id="sofa" src="../assets/sofa.png">
+                        <img id="lamp" src="../assets/lamp.png">
+                    </div>
                 </div>
             </div>
         </div>
@@ -27,6 +31,7 @@ export default {
     data(){
         return{
             color: '#243E36',
+            
         }
     },
     computed: {
@@ -58,11 +63,11 @@ export default {
 .setting {
     width: 20%;
     background-color: #89817d;
-
 }
 .display {
     width: 80%;
     text-align: center;
+    position: relative;
 }
 .wall {
     padding: 20%; 
@@ -70,6 +75,19 @@ export default {
 .forniture {
     background-color: #d8cfcb;
     padding: 5%;
+}
+.forniture img {
+    position: absolute;
+}
+#sofa {
+    top: 65%;
+    left: 31%;
+    width: 40%;
+}
+#lamp {
+    width: 18%;
+    top: 40%;
+    left: 70%;
 }
 img {
     width: 15%;

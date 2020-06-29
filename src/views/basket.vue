@@ -1,6 +1,6 @@
 <template>
     <div class="basket">
-        <div id="emptyCart" v-if="cart.length == 0">
+        <div id="emptyCart" v-if="inCart.length == 0">
             <h1>Your cart is empty</h1>
             <p>Please visit out stock</p>
             <button><router-link to="/browse">Visit Shop</router-link></button>
@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapMutations } from 'vuex';
 
 export default {
     computed: {
@@ -47,9 +47,9 @@ export default {
         },
     },
     methods: {
-        removeFromCart(index) {
-            this.inCart.splice(index, 1);
-        },
+        ...mapMutations([
+            'removeFromCart',
+        ])
     }
 
 }

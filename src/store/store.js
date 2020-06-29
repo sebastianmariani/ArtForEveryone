@@ -21,11 +21,26 @@ export const store = new Vuex.Store({
         ],
         cart:[],
         showPainting:[],
+        totalCart: 0
     },
     getters: {
         forSale: state => state.products,
         inCart: state => state.cart,
         showPainting: state => state.showPainting,
-        
     },
+    mutations: {
+        addToCart(state, item) {
+            state.cart.push(item.id);
+        },
+        removeFromCart(state, index) {
+            state.cart.splice(index, 1);
+        },
+        cart(state) {
+            return state.cart.map((cartItem) => {
+                return state.products.find((forSaleItem) => {
+                    return cartItem === forSaleItem.id;
+                })
+            })
+        },
+    }
 })
