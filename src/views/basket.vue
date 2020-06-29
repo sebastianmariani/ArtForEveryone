@@ -3,21 +3,23 @@
         <div id="emptyCart" v-if="inCart.length == 0">
             <h1>Your cart is empty</h1>
             <p>Please visit out stock</p>
-            <button><router-link to="/browse">Visit Shop</router-link></button>
+            <router-link to="/browse"><button>Visit Shop</button></router-link>
         </div>
-        <table v-if="cart.length > 0" class="table">
+        <table v-if="cartview.length > 0" class="table">
             <tbody>
                 <transition-group name="fadeOut">
-                    <tr v-for="(item, index) in cart" :key="index" class="basketItem">
+                    <tr v-for="(item, index) in cartview" :key="index" class="basketItem">
+                        <td>{{ item.quantity }}</td>
                         <td>{{ item.name }}</td>
                         <td><img :src="item.img"></td>
                         <td>{{ item.price }} £</td>
-                        <td><i @click="removeFromCart(index)" class="fas fa-trash"></i></td>
+                        <td><i @click="removeFromCart( item,index)" class="fas fa-trash"></i></td>
                     </tr>
                 </transition-group>    
                     <hr>
                     <tr class="basketItem">
                         <th>Total :</th>
+                        <th></th>
                         <th></th>
                         <th></th>
                         <th>{{ total }} £</th>
@@ -34,17 +36,9 @@ export default {
     computed: {
         ...mapGetters([
             'inCart',
+            'total',
+            'cartview'
         ]),
-        cart() {
-            return this.$store.getters.inCart.map((cartItem) => {
-                return this.$store.getters.forSale.find((forSaleItem) => {
-                    return cartItem === forSaleItem.id;
-                })
-            })
-        },
-        total() {
-            return this.cart.reduce((acc, cur) => acc + cur.price, 0);
-        },
     },
     methods: {
         ...mapMutations([
@@ -65,10 +59,11 @@ button {
     border-radius: 5px;
     padding:1% 4%;
     border-style: none;
+    cursor: pointer;
+    color: #f1f7ed;
 }
 a {
     text-decoration: none;
-    color: #f1f7ed;
 }
 .basket {
     margin: 5% 0;

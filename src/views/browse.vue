@@ -11,18 +11,11 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters , mapMutations} from 'vuex'
 
 export default {
     computed: mapGetters(['forSale', 'showPainting']),
-    methods: {
-        viewPainting(painting) {
-            if (this.showPainting.length > 0){
-                this.showPainting.shift()
-            }
-            this.showPainting.push(painting.id);
-        }
-    }
+    methods: mapMutations(['viewPainting']),
 }
 </script>
 
@@ -46,6 +39,7 @@ export default {
         color: #f1f7ed;
         padding:1% 4%;
         border-style: none;
+        cursor: pointer;
     }
     @media only screen and (max-width: 1140px) {
        img{

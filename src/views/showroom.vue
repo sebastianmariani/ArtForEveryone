@@ -14,12 +14,12 @@
                     <img :src="item.img">
                 </div>
                 <div class="forniture">
-                    <transition-group name="slideIn">
+                    <transition name="slideIn">
                         <div class="view1" v-if="livingroom">
                             <img id="sofa" src="../assets/sofa.png">
                             <img id="lamp" src="../assets/lamp.png">
                         </div>
-                    </transition-group>
+                    </transition>
                 </div>
             </div>
         </div>
@@ -39,16 +39,9 @@ export default {
     computed: {
         ...mapGetters([
             'showPainting',
-            'forSale'
+            'forSale',
+            'painting'
         ]),
-        painting() {
-            return this.showPainting.map((item) => {
-                return this.forSale.find((forSaleItem) => {
-                    return item === forSaleItem.id;
-                })
-            })
-        },
-
     }
 }
 </script>
@@ -81,10 +74,21 @@ export default {
 .forniture img {
     position: absolute;
 }
-#sofa {
-    top: 65%;
-    left: 31%;
-    width: 40%;
+.slideIn-enter-active, .slideIn-leave-active {
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease;
+}
+.slideIn-enter, .slideIn-leave-to {
+    opacity: 0;
+    transform: translateX(25%);
+}
+.slideIn-enter-to, .slideIn-leave {
+    opacity: 1;
+    transform: translateX(0%);
+}
+#sofa{
+    top: 60%;
+    left: 26%;
+    width: 50%;
 }
 #lamp {
     width: 18%;

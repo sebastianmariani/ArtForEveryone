@@ -26,18 +26,12 @@ export default {
             'showPainting',
             'forSale',
             'inCart',
+            'painting'
         ]),
-        painting() {
-            return this.showPainting.map((item) => {
-                return this.forSale.find((forSaleItem) => {
-                    return item === forSaleItem.id;
-                })
-            })
-        },
     },
     methods: {
         ...mapMutations([
-            'addToCart'
+            'addToCart',
         ]),
     }
 }
@@ -66,6 +60,7 @@ button {
     color: white;
     border-radius: 5px;
     border-style: none;
+    cursor: pointer;
 }
 img {
     width: 50%;
