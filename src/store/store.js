@@ -57,14 +57,6 @@ export const store = new Vuex.Store({
             }
             state.totalCart += item.price
         },
-        removeFromCart(state, item, index) {
-            if (item.quantity == 1) {
-                state.cart.splice(index, 1);
-            }
-            state.totalCart -= item.price
-            item.quantity--;
-            state.itemInCart--
-        },
         viewPainting(state, painting) {
             if (state.showPainting.length > 0){
                 state.showPainting.shift()

@@ -13,7 +13,7 @@
                         <td>{{ item.name }}</td>
                         <td><img :src="item.img"></td>
                         <td>{{ item.price }} £</td>
-                        <td><i @click="removeFromCart( item,index)" class="fas fa-trash"></i></td>
+                        <td><i @click="removeFromCart(item, index)" class="fas fa-trash"></i></td>
                     </tr>
                 </transition-group>    
                     <hr>
@@ -30,22 +30,27 @@
 </template>
 
 <script>
-import { mapGetters, mapMutations } from 'vuex';
+import { mapGetters } from 'vuex';
 
 export default {
+
     computed: {
         ...mapGetters([
             'inCart',
             'total',
-            'cartview'
+            'cartview',
         ]),
     },
     methods: {
-        ...mapMutations([
-            'removeFromCart',
-        ])
+        removeFromCart(item, index) {
+            if (item.quantity == 1) {
+                this.inCart.splice(index, 1);
+            }
+                this.$store.state.totalCart -= item.price
+                item.quantity--;
+                this.$store.state.itemInCart--
+        }
     }
-
 }
 </script>
 
@@ -79,6 +84,7 @@ a {
     transition: opacity .5s;
     opacity: 0;
 }
+
 .basketItem {
     display:flex;
     justify-content: space-between;
