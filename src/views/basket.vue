@@ -84,7 +84,6 @@ a {
     transition: opacity .5s;
     opacity: 0;
 }
-
 .basketItem {
     display:flex;
     justify-content: space-between;
