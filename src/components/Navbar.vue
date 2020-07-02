@@ -3,15 +3,19 @@
         <router-link to="/">Home</router-link>
         <router-link to="/about">About</router-link>
         <router-link to="/browse">Browse</router-link>
-        <router-link to="/basket">Basket <span  v-if="inCart.length > 0">({{ inCart.length }})</span></router-link>
+        <router-link to="/basket">Basket<span  v-if="itemInCart > 0">({{ itemInCart }})</span></router-link>
     </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   computed: {
-    inCart() { return this.$store.getters.inCart },
-  }
+    ...mapGetters([
+      'itemInCart',
+      'inCart'
+    ])
+  },
 }
 </script>
 

@@ -1,51 +1,58 @@
 <template>
     <div class="basket">
-        <div id="emptyCart" v-if="cart.length == 0">
-            <h1>Your cart is empty</h1>
-            <p>Please visit out stock</p>
-            <button><router-link to="/browse">Visit Shop</router-link></button>
-        </div>
-        <table v-if="cart.length > 0" class="table">
+        <transition-group name="fadeIn">
+            <div key="i" id="emptyCart" v-if="inCart.length == 0">
+                <h1>Your cart is empty</h1>
+                <p>Please visit out stock</p>
+                <router-link to="/browse"><button>Visit Shop</button></router-link>
+            </div>
+        </transition-group> 
+        <table v-if="cartview.length > 0" class="table">
             <tbody>
-                <tr v-for="(item, index) in cart" :key="item" class="basketItem">
-                    <td>{{ item.name }}</td>
-                    <td><img :src="item.img"></td>
-                    <td>{{ item.price }} £</td>
-                    <td><i @click="removeFromCart(index)" class="fas fa-trash"></i></td>
-                </tr>
-                <hr>
-                <tr class="basketItem">
-                    <th>Total :</th>
-                    <th></th>
-                    <th></th>
-                    <th>{{ total }} £</th>
-                </tr>
+                <transition-group name="fadeOut">
+                    <tr v-for="(item, index) in cartview" :key="index" class="basketItem">
+                        <td>{{ item.quantity }}</td>
+                        <td>{{ item.name }}</td>
+                        <td><img :src="item.img"></td>
+                        <td>{{ item.price }} £</td>
+                        <td><i @click="removeFromCart(item, index)" class="fas fa-trash"></i></td>
+                    </tr>
+                </transition-group>    
+                    <hr>
+                    <tr class="basketItem">
+                        <th>Total :</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th>{{ total }} £</th>
+                    </tr>
             </tbody>
         </table>
     </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
+
     computed: {
-        cart() {
-            return this.$store.getters.inCart.map((cartItem) => {
-                return this.$store.getters.forSale.find((forSaleItem) => {
-                    return cartItem === forSaleItem.id;
-                })
-            })
-        },
-        total() {
-            return this.cart.reduce((acc, cur) => acc + cur.price, 0);
-        },
-        inCart() { return this.$store.getters.inCart },
+        ...mapGetters([
+            'inCart',
+            'total',
+            'cartview',
+        ]),
     },
     methods: {
-        removeFromCart(index) {
-            this.inCart.splice(index, 1);
-        },
+        removeFromCart(item, index) {
+            if (item.quantity == 1) {
+                this.inCart.splice(index, 1);
+            }
+                this.$store.state.totalCart -= item.price
+                item.quantity--;
+                this.$store.state.itemInCart--
+        }
     }
-
 }
 </script>
 
@@ -58,10 +65,12 @@ button {
     background-color: #eb5e55;
     border-radius: 5px;
     padding:1% 4%;
+    border-style: none;
+    cursor: pointer;
+    color: #f1f7ed;
 }
 a {
     text-decoration: none;
-    color: #f1f7ed;
 }
 .basket {
     margin: 5% 0;
@@ -72,6 +81,26 @@ a {
     width: 100%;
     padding: 5%;
     font-size: 1.5em;
+}
+.fadeOut-enter {
+    opacity: 0;
+}
+.fadeOut-enter-active {
+    transition: opacity 1s;
+}
+.fadeOut-leave-active {
+    transition: opacity 1s;
+    opacity: 0;
+}
+.fadeIn-enter {
+    opacity: 0;
+}
+.fadeIn-enter-active {
+    transition: opacity 1s;
+}
+.fadeIn-leave-active {
+    transition: opacity 1s;
+    opacity: 0;
 }
 .basketItem {
     display:flex;
