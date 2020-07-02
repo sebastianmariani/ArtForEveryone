@@ -21,9 +21,9 @@
                 </div>
                 <div class="forniture">
                     <transition name="slideIn">
-                       <div v-for=" room in roomToShow" :key="room">
-                           <img  :id="room.space1" :src="room.forniture1">
-                           <img  :id="room.space2" :src="room.forniture2">
+                       <div v-for=" room in roomToShow" :key="room" class="setForniture">
+                           <img  class="left" :id="room.space1" :src="room.forniture1">
+                           <img  class="left" :id="room.space2" :src="room.forniture2">
                        </div>
                     </transition>
                 </div>
@@ -89,7 +89,7 @@ export default {
 .display {
     width: 80%;
     text-align: center;
-    position: relative;
+    /* position: relative; */
 }
 #roomSelection {
     text-decoration: underline;
@@ -102,51 +102,50 @@ export default {
 }
 .forniture {
     background-color: #d8cfcb;
-    padding: 5%;
+    padding: 6%;
+    position: relative;
 }
-.forniture img {
+.setForniture {
     position: absolute;
+    bottom: 1px;
+    left: 17%;
 }
-.slideIn-enter-active, .slideIn-leave-active {
-    transition: opacity .2s ease-in-out, transform .8s ease;
+.slideIn-leave-active {
+    transition: transform .5s ease ;
+}
+.slideIn-enter-active {
+    transition: transform .5s ease;
 }
 .slideIn-enter, .slideIn-leave-to {
     opacity: 1;
-    transform: translateX(20%);
+    transform: translateX(6%);
 }
 .slideIn-enter-to, .slideIn-leave {
     opacity: 1;
     transform: translateX(0%);
 }
 #livingroom1 {
-    bottom: 3%;
-    right: 25%;
-    width: 50%;
+    width: 70% ;
+    margin-left: 4%;
 }
 #livingroom2 {
-    bottom: 4%;
-    right: 10%;
-    width: 18%;
+    width: 25%;
 }
 #diningroom1 {
-  width: 40%;
-  bottom: -2%;
-  right: 30%;
+  width: 55%;
+  margin-left: 8%;
+  margin-bottom: -3%;
 }
 #diningroom2 {
-    width: 20%;
-    bottom: 8%;
-    right: 8%;
+    width: 30%;
+    margin-bottom: 5%;
 }
 #lounge1 {
-    bottom: 3%;
-    width: 28%;
-    right: 50%;
+    width: 50%;
+    margin-left: 15%;
 }
 #lounge2 {
-    width: 18%;
-    bottom: 5%;
-    right: 25%;
+    width: 30%;
 }
 #roomSelector:hover {
     cursor: pointer;
@@ -178,9 +177,42 @@ img {
 .wallColor {
     display: flex;
 }
+@media only screen and (max-width: 2400px){
+    #lounge1 {
+        width: 45%;
+    }
+    #lounge2 {
+        width: 28%;
+    }
+}
 @media only screen and (max-width: 2145px){
     .showroom {
         font-size:.5em;
+    }
+    #lounge1 {
+        width: 40%;
+        margin-left: 0%;
+    }
+    #lounge2 {
+        width: 24%;
+    }
+}
+@media only screen and (max-width: 1900px){
+    #lounge1 {
+        width: 38%;
+        margin-left: -15%;
+    }
+    #lounge2 {
+        width: 25%;
+    }
+}
+@media only screen and (max-width: 1700px){
+    #lounge1 {
+        width: 35%;
+        margin-left: -15%;
+    }
+    #lounge2 {
+        width: 25%;
     }
 }
 @media only screen and (max-width: 1090px){

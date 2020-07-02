@@ -30,8 +30,8 @@ export default {
     }
     hr {
         border: 1px solid #243e36;
-        margin-top: 5%;
-        width: 80%;
+        margin-top: 2%;
+        width: 50%;
     }
     button {
         border-radius: 5px;
