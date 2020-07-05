@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <h1 id="title">ARTOPIA</h1>
+    <router-link to="/" id="backHome"><h1 id="title">ARTOPIA</h1></router-link>
       <app-navbar></app-navbar>
       <transition name="view">
         <router-view></router-view>
@@ -24,9 +24,12 @@ export default {
 <style>
   #title {
     text-align: center;
-    margin-bottom: 5%;
+    margin-bottom: 2%;
     color:#243e36;
     font-size: 2.5em;
+  }
+  #backHome {
+    text-decoration: none;
   }
   body {
     background-color:#f1f7ed;

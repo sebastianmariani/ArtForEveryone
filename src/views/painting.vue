@@ -4,11 +4,9 @@
             <div id="info">
                 <h3>{{ item.name }}</h3>
                 <p><strong>artist:</strong> {{ item.artist }}</p>
+                <p>{{ item.heigth}} x {{ item.width }} cm , {{ item.type }}, {{ item.creation }}.</p>
                 <p><strong>price:</strong> {{ item.price }} £   <button @click="addToCart(item)" > add to cart </button> </p>
-                <p><strong>size:</strong> {{ item.heigth}} x {{ item.width }} cm</p>
-                <p><strong>type:</strong> {{ item.type }}</p>
-                <p><strong>created in:</strong> {{ item.creation }}</p>
-                <router-link to="/showroom"><button> view on wall </button></router-link><router-link to="/browse"><button>go back</button></router-link>
+                <router-link to="/showroom" id="viewOnWall"><h3>view on wall</h3></router-link> <br><router-link to="/browse"><i class="fas fa-arrow-left"></i></router-link>
             </div>
             <img :src="item.img">
         </div>
@@ -49,21 +47,32 @@ export default {
 }
 p {
     font-weight: 300;
+    margin-bottom: 5%;
 }
 #info {
     color: #243e36;
 }
 button {
     padding: 2%;
-    margin:0 2%;
+    margin:2%;
     background-color: #eb5e55;
     color: white;
     border-radius: 5px;
     border-style: none;
     cursor: pointer;
 }
+#viewOnWall {
+    color: #243e36;
+}
+#viewOnWall h3{
+    margin-bottom: 0;
+}
 img {
-    width: 50%;
+    width: 30%;
+}
+i {
+    font-size: 15px;
+    color: #243e36;
 }
 @media only screen and (max-width: 1200px){
     .paintDetails{

@@ -1,8 +1,7 @@
 <template>
     <div class="navbar">
-        <router-link to="/">Home</router-link>
+        <router-link to="/browse">Shop</router-link>
         <router-link to="/about">About</router-link>
-        <router-link to="/browse">Browse</router-link>
         <router-link to="/basket">Basket<span  v-if="itemInCart > 0">({{ itemInCart }})</span></router-link>
     </div>
 </template>
@@ -22,8 +21,9 @@ export default {
 <style scoped>
 .navbar {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     font-size: 1em;
+    margin: 0 25%;
 }
 .router-link-exact-active {
   color: #eb5e55;
@@ -31,6 +31,7 @@ export default {
 a {
 text-decoration: none;
 color:#243e36;
+margin: 2%;
 }
   @media only screen and (max-width: 1200px) {
     .navbar {
