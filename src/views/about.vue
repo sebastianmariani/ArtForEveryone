@@ -1,8 +1,7 @@
 <template>
     <div class="about">
         <h1>Our Story</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae excepturi fugiat quo, incidunt quas voluptatibus dolorem quibusdam dicta praesentium suscipit esse maxime, at facilis. Pariatur, accusantium rerum, quasi eius necessitatibus dignissimos vero obcaecati cum eum similique dolorum facere alias maxime</p>
-        <hr>
+        <p>Since it's beginning back in 2013, Artopia has endeavoured to help foster and build a lively online arts scene, enabling artists to sell their artworks across the world. Not only this, we've worked tirelessly to  expand and build our range of affordable artworks, to enable more and more people to have artwork in their daily life , and spark interest and curiosity.</p>
     </div>
 </template>
 

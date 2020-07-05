@@ -2,18 +2,15 @@
     <div>
         <div v-for="item in painting" :key="item.id" class="showroom">
             <div class="setting">
-                <h4>You are viewing :</h4>
-                <p>{{ item.name }}</p>
-                <p>by :{{ item.artist }}</p>
-                <p>Choose a wall color:  <span id="colorPicker" :style="{backgroundColor: color}"><input type="color" id="base" v-model="color"></span></p>
-                <p>Choose a room:</p>
+                <h1>{{ item.name }}</h1>
+                <h3>Choose a room:</h3>
                 <div v-for=" (room, idx) in rooms" :key="idx" id="roomSelection">
-                    <p>{{ room.name }}</p>
-                    <p>{{ room.space }}</p>
                     <img id="roomSelector" :src="room.roomview" @click="showRoom(room)">
+                    <p>{{ room.name }}</p>
+                    <br>
                 </div>
-                <br>
-                <router-link to="/painting"><button>go back</button></router-link>
+                <p>Choose a wall color:  <span id="colorPicker" :style="{backgroundColor: color}"><input type="color" id="base" v-model="color"></span></p>
+                <router-link to="/painting"><i class="fas fa-arrow-left"></i></router-link>
             </div>
             <div  class="display">
                 <div :style="{backgroundColor: color}" class="wall">
@@ -49,9 +46,9 @@ export default {
         return{
             color: '#243E36',
             rooms: [
+                { name: "lounge", space1: 'lounge1', space2: 'lounge2', forniture1: chair, forniture2:sidetable, roomview: lounge},
                 { name: "livingroom" , space1: 'livingroom1', space2: 'livingroom2',  forniture1:sofa, forniture2:lamp, roomview: livingroom },
-                { name: "diningroom" , space1: 'diningroom1', space2: 'diningroom2', forniture1: table, forniture2: cabinet, roomview: diningroom },
-                { name: "lounge", space1: 'lounge1', space2: 'lounge2', forniture1: chair, forniture2:sidetable, roomview: lounge}
+                { name: "diningroom" , space1: 'diningroom1', space2: 'diningroom2', forniture1: table, forniture2: cabinet, roomview: diningroom }
             ],
             roomToShow: [],
         }
@@ -73,7 +70,10 @@ export default {
 </script>
 
 <style scoped>
-
+h1 {
+    margin-bottom: 10%;
+    margin-top: 0;
+}
 .showroom {
     margin: 5%;
     display: flex;
@@ -87,9 +87,9 @@ export default {
     color: black;
 }
 .display {
-    width: 80%;
+    width: 70%;
     text-align: center;
-    /* position: relative; */
+    margin-right: 10%;
 }
 #roomSelection {
     text-decoration: underline;
@@ -97,8 +97,15 @@ export default {
 #roomSelection img{
     width: 40%;
 }
+#roomSelection p{
+    margin-top: 0;
+}
 .wall {
-    padding: 20%; 
+    padding-bottom: 20%;
+    padding-top: 5%; 
+}
+.wall img {
+    width: 10%;
 }
 .forniture {
     background-color: #d8cfcb;
@@ -176,6 +183,10 @@ img {
 }
 .wallColor {
     display: flex;
+}
+i {
+    font-size: 12px;
+    color: #243e36;
 }
 @media only screen and (max-width: 2400px){
     #lounge1 {
