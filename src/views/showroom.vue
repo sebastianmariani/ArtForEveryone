@@ -59,207 +59,186 @@ export default {
             'forSale',
             'painting'
         ]),
-
     },
     methods: {
         showRoom(room) {
-                this.roomToShow.shift();
-                this.roomToShow.push(room);   
-            }  
-        }
-    },
-    // beforeMount() {
-    //     var i = 0
-
-    //     let imageObj = new Image();
-    //     let images = new Array();
-    //     images[0] = sofa
-    //     images[1] = lamp
-    //     images[2] = table
-    //     images[3] = cabinet
-    //     images[4] = chair 
-    //     images[5] = sidetable
-    //     images[6] = livingroom
-    //     images[7] = diningroom
-    //     images[8] = lounge
-
-    //     for (i=0; i<=8; i++){
-    //         imageObj.src=images[i]
-    //     }
-    // }
+            this.roomToShow.shift();
+            this.roomToShow.push(room);   
+        }  
+    }
 }
 </script>
 
 <style scoped>
-h1 {
-    margin-bottom: 10%;
-    margin-top: 0;
-}
-.showroom {
-    margin: 5%;
-    display: flex;
-    justify-content: space-between;
-    font-weight: 300;
-    font-size: 1em;
-}
-.setting {
-    width: 20%;
-    text-align: center;
-    color: black;
-}
-.display {
-    width: 70%;
-    text-align: center;
-    margin-right: 10%;
-}
-#roomSelection {
-    text-decoration: underline;
-}
-#roomSelection img{
-    width: 40%;
-}
-#roomSelection p{
-    margin-top: 0;
-}
-.wall {
-    padding-bottom: 20%;
-    padding-top: 5%; 
-}
-.wall img {
-    width: 10%;
-}
-.forniture {
-    background-color: #d8cfcb;
-    padding: 6%;
-    position: relative;
-}
-.setForniture {
-    position: absolute;
-    bottom: 1px;
-    left: 17%;
-}
-.slideIn-leave-active {
-    transition: transform .5s ease ;
-}
-.slideIn-enter-active {
-    transition: transform .5s ease;
-}
-.slideIn-enter, .slideIn-leave-to {
-    opacity: 1;
-    transform: translateX(6%);
-}
-.slideIn-enter-to, .slideIn-leave {
-    opacity: 1;
-    transform: translateX(0%);
-}
-#livingroom1 {
-    width: 70% ;
-    margin-left: 4%;
-}
-#livingroom2 {
-    width: 25%;
-}
-#diningroom1 {
-  width: 55%;
-  margin-left: 8%;
-  margin-bottom: -3%;
-}
-#diningroom2 {
-    width: 30%;
-    margin-bottom: 5%;
-}
-#lounge1 {
-    width: 50%;
-    margin-left: 15%;
-}
-#lounge2 {
-    width: 30%;
-}
-#roomSelector:hover {
-    cursor: pointer;
-}
-button {
-    padding: 2%;
-    margin:0 2%;
-    background-color: #eb5e55;
-    border-radius: 5px;
-    border-style: none;
-    cursor: pointer;
-    color: white;
-    font-size:.8em;
-}
-input{
-    opacity: 0;
-    width:4%;
-    height: 4%;
-}
-input:hover{
-    cursor: pointer;
-}
-#colorPicker{
-    border-radius: 2px;
-}
-img {
-    width: 20%;
-}
-.wallColor {
-    display: flex;
-}
-i {
-    font-size: 12px;
-    color: #243e36;
-}
-@media only screen and (max-width: 2400px){
-    #lounge1 {
-        width: 45%;
+    h1 {
+        margin-bottom: 10%;
+        margin-top: 0;
     }
-    #lounge2 {
-        width: 28%;
-    }
-}
-@media only screen and (max-width: 2145px){
     .showroom {
-        font-size:.5em;
+        margin: 5%;
+        display: flex;
+        justify-content: space-between;
+        font-weight: 300;
+        font-size: 1em;
     }
-    #lounge1 {
+    .setting {
+        width: 20%;
+        text-align: center;
+        color: black;
+    }
+    .display {
+        width: 70%;
+        text-align: center;
+        margin-right: 10%;
+    }
+    #roomSelection {
+        text-decoration: underline;
+    }
+    #roomSelection img{
         width: 40%;
-        margin-left: 0%;
     }
-    #lounge2 {
-        width: 24%;
+    #roomSelection p{
+        margin-top: 0;
     }
-}
-@media only screen and (max-width: 1900px){
-    #lounge1 {
-        width: 38%;
-        margin-left: -15%;
+    .wall {
+        padding-bottom: 20%;
+        padding-top: 5%; 
     }
-    #lounge2 {
+    .wall img {
+        width: 10%;
+    }
+    .forniture {
+        background-color: #d8cfcb;
+        padding: 6%;
+        position: relative;
+    }
+    .setForniture {
+        position: absolute;
+        bottom: 1px;
+        left: 17%;
+    }
+    .slideIn-leave-active {
+        transition: transform .5s ease ;
+    }
+    .slideIn-enter-active {
+        transition: transform .5s ease;
+    }
+    .slideIn-enter, .slideIn-leave-to {
+        opacity: 1;
+        transform: translateX(6%);
+    }
+    .slideIn-enter-to, .slideIn-leave {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+    #livingroom1 {
+        width: 70% ;
+        margin-left: 4%;
+    }
+    #livingroom2 {
         width: 25%;
     }
-}
-@media only screen and (max-width: 1700px){
+    #diningroom1 {
+    width: 55%;
+    margin-left: 8%;
+    margin-bottom: -3%;
+    }
+    #diningroom2 {
+        width: 30%;
+        margin-bottom: 5%;
+    }
     #lounge1 {
-        width: 35%;
-        margin-left: -15%;
+        width: 50%;
+        margin-left: 15%;
     }
     #lounge2 {
-        width: 25%;
+        width: 30%;
     }
-}
-@media only screen and (max-width: 1090px){
-    .showroom {
-        font-size:.3em;
+    #roomSelector:hover {
+        cursor: pointer;
     }
-}
-@media only screen and (max-width: 670px){
-    .showroom {
-        font-size:.2em;
+    button {
+        padding: 2%;
+        margin:0 2%;
+        background-color: #eb5e55;
+        border-radius: 5px;
+        border-style: none;
+        cursor: pointer;
+        color: white;
+        font-size:.8em;
     }
-}
-@media only screen and (max-width: 670px){
-    .showroom {
-        font-size:.1em;
+    input{
+        opacity: 0;
+        width:4%;
+        height: 4%;
     }
-}
+    input:hover{
+        cursor: pointer;
+    }
+    #colorPicker{
+        border-radius: 2px;
+    }
+    img {
+        width: 20%;
+    }
+    .wallColor {
+        display: flex;
+    }
+    i {
+        font-size: 12px;
+        color: #243e36;
+    }
+    @media only screen and (max-width: 2400px){
+        #lounge1 {
+            width: 45%;
+        }
+        #lounge2 {
+            width: 28%;
+        }
+    }
+    @media only screen and (max-width: 2145px){
+        .showroom {
+            font-size:.5em;
+        }
+        #lounge1 {
+            width: 40%;
+            margin-left: 0%;
+        }
+        #lounge2 {
+            width: 24%;
+        }
+    }
+    @media only screen and (max-width: 1900px){
+        #lounge1 {
+            width: 38%;
+            margin-left: -15%;
+        }
+        #lounge2 {
+            width: 25%;
+        }
+    }
+    @media only screen and (max-width: 1700px){
+        #lounge1 {
+            width: 35%;
+            margin-left: -15%;
+        }
+        #lounge2 {
+            width: 25%;
+        }
+    }
+    @media only screen and (max-width: 1090px){
+        .showroom {
+            font-size:.3em;
+        }
+    }
+    @media only screen and (max-width: 670px){
+        .showroom {
+            font-size:.2em;
+        }
+    }
+    @media only screen and (max-width: 670px){
+        .showroom {
+            font-size:.1em;
+        }
+    }
 </style>
