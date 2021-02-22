@@ -1,10 +1,12 @@
 <template>
   <div class="app">
-    <router-link to="/" id="backHome"><h1 id="title">ARTOPIA</h1></router-link>
-      <app-navbar></app-navbar>
-      <transition name="view">
-        <router-view></router-view>
-      </transition>
+    <div id="view" >
+      <router-link to="/" id="backHome"><h1 id="title">ARTOPIA</h1></router-link>
+        <app-navbar></app-navbar>
+        <transition name="view">
+          <router-view></router-view>
+        </transition>
+    </div>
       <app-contacts></app-contacts>
   </div>
 </template>
@@ -22,18 +24,24 @@ export default {
 </script>
 
 <style>
+  .app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-between;
+  }
   #title {
     text-align: center;
     margin-bottom: 2%;
     color:#243e36;
-    font-size: 2.5em;
+    font-size: 2em;
   }
   #backHome {
     text-decoration: none;
   }
   body {
     background-color:#f1f7ed;
-    font-size: 2em;
+    font-size: 1.5em;
     font-family: 'Alegreya Sans SC', sans-serif;
     font-weight: 400;
   }
@@ -58,11 +66,6 @@ export default {
   .view-leave{
     opacity: 1;
     transform: translateY(100px);
-  }
-  @media only screen and (max-width: 1350px) {
-    #title {
-      font-size: 2em;
-    }
   }
   @media only screen and (max-width: 1000px) {
     #title {

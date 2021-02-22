@@ -4,7 +4,7 @@
             <div class="setting">
                 <h1>{{ item.name }}</h1>
                 <h3>Choose a room:</h3>
-                <div v-for=" (room, idx) in rooms" :key="idx" id="roomSelection">
+                <div v-for=" (room, id) in rooms" :key="id" id="roomSelection">
                     <img id="roomSelector" :src="room.roomview" @click="showRoom(room)">
                     <p>{{ room.name }}</p>
                     <br>
@@ -18,10 +18,10 @@
                 </div>
                 <div class="forniture">
                     <transition name="slideIn">
-                       <div v-for=" room in roomToShow" :key="room" class="setForniture">
-                           <img  class="left" :id="room.space1" :src="room.forniture1">
-                           <img  class="left" :id="room.space2" :src="room.forniture2">
-                       </div>
+                    <div v-for=" room in roomToShow" :key="room" class="setForniture">
+                        <img  class="left" :id="room.space1" :src="room.forniture1">
+                        <img  class="left" :id="room.space2" :src="room.forniture2">
+                    </div>
                     </transition>
                 </div>
             </div>
@@ -59,6 +59,7 @@ export default {
             'forSale',
             'painting'
         ]),
+
     },
     methods: {
         showRoom(room) {
@@ -67,7 +68,26 @@ export default {
                 this.roomToShow.push(room);   
             }, 100)   
         }
-    }
+    },
+    // beforeMount() {
+    //     var i = 0
+
+    //     let imageObj = new Image();
+    //     let images = new Array();
+    //     images[0] = sofa
+    //     images[1] = lamp
+    //     images[2] = table
+    //     images[3] = cabinet
+    //     images[4] = chair 
+    //     images[5] = sidetable
+    //     images[6] = livingroom
+    //     images[7] = diningroom
+    //     images[8] = lounge
+
+    //     for (i=0; i<=8; i++){
+    //         imageObj.src=images[i]
+    //     }
+    // }
 }
 </script>
 
