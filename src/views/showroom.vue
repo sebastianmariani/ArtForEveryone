@@ -63,10 +63,9 @@ export default {
     },
     methods: {
         showRoom(room) {
-            setTimeout( () => {
                 this.roomToShow.shift();
                 this.roomToShow.push(room);   
-            }, 100)   
+            }  
         }
     },
     // beforeMount() {
