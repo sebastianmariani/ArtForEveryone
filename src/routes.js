@@ -11,5 +11,6 @@ export const routes = [
     { path:'/basket', name:'basket', component: basket},
     { path:'/about', name:'about', component: about},
     { path:'/painting', name:'painting', component: painting},
-    { path:'/showroom', name:'showroom', component: showroom}
+    { path:'/showroom', name:'showroom', component: showroom},
+    { path: '*', name: 'home', component: home}
 ]
