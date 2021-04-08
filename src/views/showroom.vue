@@ -64,7 +64,7 @@ export default {
         showRoom(room) {
             this.roomToShow.shift();
             this.roomToShow.push(room);   
-        }  
+        }, 
     }
 }
 </script>
