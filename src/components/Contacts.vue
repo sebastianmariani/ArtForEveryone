@@ -1,10 +1,10 @@
 <template>
     <div class="contacts">
         <div>
-            <p><a>Carrers</a></p>
-            <p><a>Privacy</a></p>
-            <p><a>Security</a></p>
-            <p><a>Who we support</a></p>
+            <p><a href="#">Carrers</a></p>
+            <p><a href="#">Privacy</a></p>
+            <p><a href="#">Security</a></p>
+            <p><a href="#">Who we support</a></p>
         </div>
         <div class="numbers">
             <p>UK: 020 1234 5678</p>
@@ -13,10 +13,10 @@
             <p>JAPAN: 020 1234 5678</p>
         </div>
         <div class="icons">
-            <a><i class="fab fa-twitter"></i></a>
-            <a><i class="fab fa-facebook"></i></a>
-            <a><i class="fab fa-instagram"></i></a>
-            <a><i class="fas fa-envelope"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fas fa-envelope"></i></a>
         </div>
     </div>
 </template>
@@ -35,6 +35,10 @@ export default {
         font-size: .5em;
         display: flex;
         justify-content: space-evenly;
+    }
+    a {
+        text-decoration: none;
+        color: #eb5e55;
     }
     .icons {
         padding: 1%;

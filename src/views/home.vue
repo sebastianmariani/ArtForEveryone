@@ -35,6 +35,7 @@ export default {
 }
 .img-with-text img {
     width: 60%;
+    height: 100%;
 }
 hr {
         border: 1px solid #eb5e55;

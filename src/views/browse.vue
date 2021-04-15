@@ -3,7 +3,7 @@
         <br>
         <div v-for="painting in forSale" :key="painting.id" class="painting">
             <h1>{{ painting.name }}</h1>
-            <img :src="painting.img">
+            <img :src="painting.img" :alt="painting.name">
             <p> {{ painting.price }} £</p>
             <router-link to="/painting"><button @click="viewPainting(painting)">View</button></router-link>
         </div>
@@ -34,6 +34,7 @@ export default {
     }
     img{
         height: 50em;
+        width: auto;
     }
     hr {
         height: .2px;

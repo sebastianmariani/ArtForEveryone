@@ -10,7 +10,7 @@
         <table v-if="cartview.length > 0" class="table">
             <tbody>
                 <transition-group name="fadeOut">
-                    <tr v-for="(item, index) in cartview" :key="index" class="basketItem">
+                    <tr v-for="(item, index) in cartview" :key="item" class="basketItem">
                         <td>{{ item.quantity }}</td>
                         <td>{{ item.name }}</td>
                         <td><img :src="item.img"></td>
