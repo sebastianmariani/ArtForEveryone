@@ -118,10 +118,10 @@ export default {
         left: 17%;
     }
     .slideIn-leave-active {
-        transition: transform .5s ease ;
+        transition: transform .8s ease ;
     }
     .slideIn-enter-active {
-        transition: transform .5s ease;
+        transition: transform .8s ease;
     }
     .slideIn-enter, .slideIn-leave-to {
         opacity: 1;
