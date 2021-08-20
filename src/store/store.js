@@ -8,6 +8,12 @@ import img3 from "../assets/painting3.jpg";
 import img4 from "../assets/painting4.jpg";
 import img5 from "../assets/painting5.jpg";
 import img6 from "../assets/painting6.jpg";
+import img7 from "../assets/painting7.jpg";
+import img8 from "../assets/painting8.jpg";
+import img9 from "../assets/painting9.jpg";
+import img10 from "../assets/painting10.jpg";
+import img11 from "../assets/painting11.jpg";
+import img12 from "../assets/painting12.jpg";
 
 export const store = new Vuex.Store({
   state: {
@@ -82,6 +88,78 @@ export const store = new Vuex.Store({
         type: "oil on canvas",
         creation: "1989",
         artist: "Frankie Parrish",
+        quantity: 0,
+      },
+      {
+        id: 7,
+        img: img7,
+        name: "Still life",
+        price: 110,
+        heigth: 65,
+        width: 55,
+        type: "oil on canvas",
+        creation: "2012",
+        artist: "Charley Woods",
+        quantity: 0,
+      },
+      {
+        id: 8,
+        img: img8,
+        name: "Still life",
+        price: 110,
+        heigth: 65,
+        width: 55,
+        type: "oil on canvas",
+        creation: "2012",
+        artist: "Charley Woods",
+        quantity: 0,
+      },
+      {
+        id: 9,
+        img: img9,
+        name: "Still life",
+        price: 110,
+        heigth: 65,
+        width: 55,
+        type: "oil on canvas",
+        creation: "2012",
+        artist: "Charley Woods",
+        quantity: 0,
+      },
+      {
+        id: 10,
+        img: img10,
+        name: "Still life",
+        price: 110,
+        heigth: 65,
+        width: 55,
+        type: "oil on canvas",
+        creation: "2012",
+        artist: "Charley Woods",
+        quantity: 0,
+      },
+      {
+        id: 11,
+        img: img11,
+        name: "Still life",
+        price: 110,
+        heigth: 65,
+        width: 55,
+        type: "oil on canvas",
+        creation: "2012",
+        artist: "Charley Woods",
+        quantity: 0,
+      },
+      {
+        id: 12,
+        img: img12,
+        name: "Still life",
+        price: 110,
+        heigth: 65,
+        width: 55,
+        type: "oil on canvas",
+        creation: "2012",
+        artist: "Charley Woods",
         quantity: 0,
       },
     ],
