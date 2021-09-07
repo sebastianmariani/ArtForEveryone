@@ -1,14 +1,13 @@
 <template>
   <div class="showcase">
     <div v-for="painting in forSale" :key="painting.id" class="painting">
-      <h1>{{ painting.name }}</h1>
       <img :src="painting.img" :alt="painting.name" />
+      <h1>{{ painting.name }}</h1>
       <p>{{ painting.price }} £</p>
       <router-link to="/painting"
         ><button @click="viewPainting(painting)">View</button></router-link
       >
     </div>
-    <br />
   </div>
 </template>
 
@@ -26,32 +25,24 @@ h1 {
   margin-bottom: 1%;
 }
 .showcase {
-  margin-top: 5%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 1%;
+  column-count: 3;
+  column-width: 400px;
+  column-gap: 2rem;
 }
 .painting {
   text-align: center;
-  font-size: 0.5em;
   color: #243e36;
-  background-color: red;
+  font-size: 0.5em;
+  padding: 20px 0;
 }
 p {
   margin: 1%;
 }
 img {
+  object-fit: cover;
   max-height: 100%;
   max-width: 100%;
-  object-fit: cover;
-}
-hr {
-  height: 0.2px;
-  background-color: #243e36;
-  border: 0;
-  border-radius: 5px;
-  margin-top: 2%;
-  width: 50%;
+  height: 30em;
 }
 button {
   border-radius: 5px;
@@ -61,11 +52,6 @@ button {
   border-style: none;
   cursor: pointer;
   margin-bottom: 3%;
-}
-@media only screen and (max-width: 1140px) {
-  img {
-    height: 30em;
-  }
 }
 @media only screen and (max-width: 850px) {
   img {
