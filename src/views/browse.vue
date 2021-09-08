@@ -32,7 +32,7 @@ h1 {
 .painting {
   text-align: center;
   color: #243e36;
-  font-size: 0.5em;
+  font-size: 0.4em;
   padding: 20px 0;
 }
 p {
@@ -42,7 +42,7 @@ img {
   object-fit: cover;
   max-height: 100%;
   max-width: 100%;
-  height: 30em;
+  height: 40em;
 }
 button {
   border-radius: 5px;
@@ -55,12 +55,15 @@ button {
 }
 @media only screen and (max-width: 850px) {
   img {
-    height: 20em;
+    height: 30em;
   }
 }
 @media only screen and (max-width: 450px) {
   .painting {
-    font-size: 0.3em;
+    font-size: 0.4em;
+  }
+  img {
+    height: 20em;
   }
 }
 </style>

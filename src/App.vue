@@ -1,85 +1,88 @@
 <template>
   <div class="app">
-    <div id="view" >
-      <router-link to="/" id="backHome"><h1 id="title">ARTOPIA</h1></router-link>
-        <app-navbar></app-navbar>
-        <transition name="view">
-          <router-view></router-view>
-        </transition>
+    <div id="view">
+      <router-link to="/" id="backHome"
+        ><h1 id="title">ARTOPIA</h1></router-link
+      >
+      <app-navbar></app-navbar>
+      <transition name="view">
+        <router-view></router-view>
+      </transition>
     </div>
-      <app-contacts></app-contacts>
+    <app-contacts></app-contacts>
   </div>
 </template>
 
 <script>
-import navbar from './components/Navbar';
-import contacts from './components/Contacts'
+import navbar from "./components/Navbar";
+import contacts from "./components/Contacts";
 
 export default {
   components: {
-    'app-navbar': navbar,
-    'app-contacts': contacts,
-  }
-}
+    "app-navbar": navbar,
+    "app-contacts": contacts,
+  },
+};
 </script>
 
 <style>
-  .app {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    justify-content: space-between;
-  }
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
+}
+#title {
+  text-align: center;
+  margin-bottom: 2%;
+  color: #243e36;
+  font-size: 2em;
+}
+#backHome {
+  text-decoration: none;
+}
+body {
+  background-color: #f1f7ed;
+  font-size: 1.4em;
+  font-family: "Alegreya Sans SC", sans-serif;
+  font-weight: 400;
+}
+.view-enter-active,
+.view-leave-active {
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease;
+}
+.view-enter-active {
+  transition-delay: 0.5s;
+}
+.view-enter {
+  opacity: 0;
+  transform: translateY(-100px);
+}
+.view-enter-to {
+  opacity: 1;
+  transform: translateY(0px);
+}
+.view-leave-to {
+  opacity: 0;
+  transform: translateY(0px);
+}
+.view-leave {
+  opacity: 1;
+  transform: translateY(100px);
+}
+@media only screen and (max-width: 1000px) {
   #title {
-    text-align: center;
-    margin-bottom: 2%;
-    color:#243e36;
-    font-size: 2em;
-  }
-  #backHome {
-    text-decoration: none;
-  }
-  body {
-    background-color:#f1f7ed;
     font-size: 1.5em;
-    font-family: 'Alegreya Sans SC', sans-serif;
-    font-weight: 400;
   }
-  .view-enter-active, .view-leave-active {
-    transition: opacity  0.5s ease-in-out, transform  0.5s ease; 
+}
+@media only screen and (max-width: 600px) {
+  #title {
+    font-size: 1.2em;
   }
-  .view-enter-active {
-    transition-delay: 0.5s ;
+}
+@media only screen and (max-width: 400px) {
+  #title {
+    font-size: 0.8em;
   }
-  .view-enter {
-    opacity: 0;
-    transform: translateY(-100px);
-  }
-  .view-enter-to {
-    opacity: 1;
-    transform: translateY(0px);
-  }
-  .view-leave-to{
-    opacity: 0;
-    transform: translateY(0px);
-  }
-  .view-leave{
-    opacity: 1;
-    transform: translateY(100px);
-  }
-  @media only screen and (max-width: 1000px) {
-    #title {
-      font-size: 1.5em;
-    }
-  }
-  @media only screen and (max-width: 600px) {
-    #title {
-      font-size: 1.2em;
-    }
-  }
-  @media only screen and (max-width: 400px) {
-    #title {
-      font-size: .8em;
-    }
-  }
+}
 </style>
