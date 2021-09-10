@@ -43,7 +43,8 @@ export default {
 }
 .paintDetails {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  align-items: center;
   margin: 5%;
   font-size: 0.8em;
 }
